@@ -11,11 +11,11 @@ variable "ami_id" {
 }
 
 variable "vpc_cidr" {
-  default = "10.0.0.0/16"
+  default = "178.0.0.0/16"
 }
 
 variable "public_subnet_cidr" {
-  default = "10.0.1.0/24"
+  default = "178.0.10.0/24"
 }
 
 # Map of locations against AWS region names
