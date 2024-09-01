@@ -11,9 +11,20 @@ variable "ami_id" {
 }
 
 variable "vpc_cidr" {
-  default = "10.0.0.0/8"
+  default = "10.0.0.0/16"
 }
 
 variable "public_subnet_cidr" {
   default = "10.0.1.0/24"
+}
+
+# Map of locations against AWS region names
+variable "region_map" {
+  type = map(string)
+  default = {
+    dublin    = "eu-west-1"
+    london    = "eu-west-2"
+    frankfurt = "eu-central-1"
+    paris     = "eu-west-3"
+  }
 }
