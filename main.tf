@@ -1,13 +1,3 @@
-#terraform {
-#  required_providers {
-#    aws = {
-#      source  = "hashicorp/aws"
-#      version = "~> 5.0"
-#    }
-#  }
-#}
-
-
 resource "aws_instance" "phobos" {
   ami           = var.ami_id
   instance_type = var.instance_type
@@ -23,6 +13,8 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install apache2 -y
 echo "Apache installed"
+sudo systemctl enable apache2
+sudo systemctl start apache2
 EOF
 
   tags = {
@@ -48,6 +40,8 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install apache2 -y
 echo "Apache installed"
+sudo systemctl enable apache2
+sudo systemctl start apache2
 EOF
 
   tags = {
